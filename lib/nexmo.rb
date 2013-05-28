@@ -19,6 +19,8 @@ module Nexmo
       @http = Net::HTTP.new('rest.nexmo.com', Net::HTTP.https_default_port)
 
       @http.use_ssl = true
+
+      @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     end
 
     attr_accessor :key, :secret, :http, :oauth_access_token
